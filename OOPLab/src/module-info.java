@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author AD
- *
- */
-module OOPLab {
-}
