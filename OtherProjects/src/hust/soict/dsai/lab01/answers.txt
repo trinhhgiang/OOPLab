@@ -1,0 +1,4 @@
+6.1
+If users choose "Cancel", the system will show users's confirm as "No"
+To customize the options to users, we can use:
+int option = JOptionPane.showConfirmDialog(null,"Do you want to change the first class ticket?",null,JOptionPane.YES_NO_OPTION);

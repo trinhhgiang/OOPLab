@@ -1,0 +1,6 @@
+​​Reading Assignment:  When should accessor methods be used? 
+- It's okay for a method to return an object in terms of an interface that the object implements because that interface isolates you from changes to the implementing class.
+- If designers have no choiec. It's difficult to eliminate all the accessors if you can't predict how you will use the class's objects
+
+8. Create Constructor method
+Answer: Java allows you to do that. It uses overloading method.
