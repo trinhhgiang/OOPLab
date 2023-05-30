@@ -7,8 +7,8 @@
     <fullyQualifiedTypeName name="AimsProject.Cart"/>
     <fullyQualifiedTypeName name="AimsProject.DigitalVideoDisc"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="hust.soict.dsai.aims.disc.DigitalVideoDisc"/>
     <fullyQualifiedTypeName name="java.nio.file.Files"/>
     <fullyQualifiedTypeName name="java.nio.file.Paths"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.disc.DigitalVideoDisc"/>
 </qualifiedTypeNameHistroy>
