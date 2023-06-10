@@ -6,9 +6,25 @@
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="AimsProject.Cart"/>
     <fullyQualifiedTypeName name="AimsProject.DigitalVideoDisc"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.nio.file.Files"/>
     <fullyQualifiedTypeName name="java.nio.file.Paths"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="hust.soict.dsai.aims.disc.DigitalVideoDisc"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.Media"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.Track"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.MediaComparatorByTitleCost"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.MediaComparatorByCostTitle"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.Playable"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.DigitalVideoDisc"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.CompactDisc"/>
+    <fullyQualifiedTypeName name="hust.soict.dsai.aims.media.Book"/>
 </qualifiedTypeNameHistroy>

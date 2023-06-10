@@ -1,0 +1,94 @@
+package hust.soict.dsai.aims.cart;
+
+import java.util.ArrayList;
+
+import hust.soict.dsai.aims.media.Media;
+
+public class Cart {
+	public static final int MAX_NUMBERS_ORDER =20;
+	private	ArrayList<Media> itemsOrdered = new ArrayList<Media>() ;
+	private int num_of_items=0;
+	
+	public int getNum_of_items() {
+		return num_of_items;
+	}
+	
+	public void addMedia(Media media) {
+		itemsOrdered.add(media);
+		num_of_items+=1;
+	}
+	
+//	public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
+//		for (DigitalVideoDisc dvd:dvdList) {
+//			this.addDigitalVideoDisc(dvd);
+//		}
+//	}
+	//
+	public void addMedia(Media... args) {
+		for (Media media:args) {
+			itemsOrdered.add(media);
+			num_of_items+=1;
+		}
+	}
+	
+	public void addMedia(Media media1, Media media2) {
+		itemsOrdered.add(media1);
+		itemsOrdered.add(media2);
+		num_of_items+=2;
+
+	}
+	
+	public void removeMedia(Media media) {
+		if (itemsOrdered.contains(media)) {
+				itemsOrdered.remove(media);
+				num_of_items-=1;
+			}
+	}
+	
+	public float totalCost() {
+		float cost=0;
+		for (Media media : itemsOrdered) {
+			cost+=media.getCost();
+		}
+		return cost;
+	}
+	
+	public void print() {
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items: ");
+		for (Media media : itemsOrdered) {
+			System.out.println(media.toString());
+		}
+		System.out.println("Total cost: " + this.totalCost());
+		System.out.println("***************************************************");
+	}
+	
+	public Media search(int id) {
+		for (Media media: itemsOrdered) {
+			if (media.getId()==id){
+				System.out.println(media.toString());
+				return media;
+			}
+		}
+		System.out.println("No match is found!");
+		return null;
+	}
+	
+	public Media search(String title) {
+		for (Media media :itemsOrdered) {
+			if (media.getTitle().equals(title)){
+				System.out.println(media.toString());
+				return media;
+			}
+		}
+		System.out.println("No match is found!");
+		return null;
+	}
+
+	public ArrayList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+	public void empty() {
+		this.itemsOrdered = new ArrayList<Media>();
+	}
+}

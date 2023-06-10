@@ -1,0 +1,53 @@
+package hust.soict.dsai.aims.media;
+public class DigitalVideoDisc extends Disc implements Playable{
+	private static int nbDigitalVideoDisc = 0;
+
+
+public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
+		super(id, title, category, director, length, cost);
+		nbDigitalVideoDisc+=1;
+	}
+	//	public DigitalVideoDisc(String title) {
+//		this.title = title;
+//		this.nbDigitalVideoDisc+=1;
+//		this.id=nbDigitalVideoDisc;
+//		
+//	}
+//	public DigitalVideoDisc(String title, String category, float cost) {
+//		this.title = title;
+//		this.category = category;
+//		this.cost = cost;
+//		this.nbDigitalVideoDisc+=1;
+//		this.id=nbDigitalVideoDisc;
+//	}
+//	public DigitalVideoDisc(String title, String category, String director, float cost) {
+//		this.title = title;
+//		this.category = category;
+//		this.director = director;
+//		this.cost = cost;
+//		this.nbDigitalVideoDisc+=1;
+//		this.id=nbDigitalVideoDisc;
+//	}
+//	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+//		this.title = title;
+//		this.category = category;
+//		this.director = director;
+//		this.length = length;
+//		this.cost = cost;
+//		this.nbDigitalVideoDisc+=1;
+//		this.id=nbDigitalVideoDisc;
+	public String toString() {
+		String res = String.format("%d. DVD - %s - %s - %s - %d : %f $",this.id,this.title,this.category,this.director,this.length,this.cost);
+		return res;
+	}
+	public boolean isMatch(String title) {
+		return title.equals(this.getTitle());
+	}
+	public boolean isMatch(int id) {
+		return id==this.getId();
+	}
+	public void play() {
+		System.out.println("Playing DVD: " + this.getTitle());
+		System.out.println("DVD length: " + this.getLength());
+	}
+}
