@@ -1,0 +1,7 @@
+9. Constructors of whole classes and parent classes:
+- CompactDisc is aggregates of Track.
+12. Sort media in the cart:
+- Media should implement Comparable interface.
+- We should return a positive number if this object is before other object, and a negative number otherwise.
+- We can create 2 more compareTo method for Title and Cost.
+- We can override the compareTo methods in DVD class.
