@@ -2,7 +2,7 @@
 2. Working with overloading: I prefer a the method with arbitrary number of parameter because this
 method can also use with an array parameter.
 
-3. Passing Parameter: JAVA is a Pass by Reference programming language.
+3. Passing Parameter: JAVA is a Pass by Value programming language.
 =======
 Passing Parameter: JAVA is a Pass by Reference programming language.
 >>>>>>> a6bcb1d899f450b5a500641797d03e9f0b89dc14

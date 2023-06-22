@@ -1,17 +1,32 @@
 package hust.soict.dsai.aims.screen;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-import javax.swing.*;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.Store;
 
-public class StoreScreen extends JFrame{
+public class AddItemToStoreScreen extends JFrame {
+
 	private Store store;
 	private Cart cart;
 	
@@ -40,10 +55,10 @@ public class StoreScreen extends JFrame{
 		menu.add(smUpdateStore);
 		JMenuItem viewStore = new JMenuItem("View store");
 		menu.add(viewStore);
+		viewStore.addActionListener(new ButtonListener(store));
 		JMenuItem viewCart = new JMenuItem("View cart");
-		viewCart.addActionListener(new ButtonListener(store,cart));
+		viewCart.addActionListener(new ButtonListener(cart));
 		menu.add(viewCart);
-		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
 		menuBar.add(menu);
@@ -54,75 +69,63 @@ public class StoreScreen extends JFrame{
 		JPanel header = new JPanel();
 		header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
 		
-		JLabel title = new JLabel("AIMS");
+		JLabel title = new JLabel("Update Store");
 		title.setFont(new Font(title.getFont().getName(),Font.PLAIN, 50));
 		title.setForeground(Color.CYAN);
 		
-		JButton cart = new JButton("View cart");
-		cart.setPreferredSize(new Dimension(100,50));
-		cart.setMaximumSize(new Dimension(100,50));
-		cart.addActionListener(new ButtonListener(store,this.cart));
 		
 		header.add(Box.createRigidArea(new Dimension(10,10)));
 		header.add(title);
 		header.add(Box.createHorizontalGlue());
-		header.add(cart);
 		header.add(Box.createRigidArea(new Dimension(10,10)));
 		
 		return header;
 	}
 	
+	public Store getStore() {
+		return store;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+
 	JPanel createCenter() {
-		
 		JPanel center = new JPanel();
-		center.setLayout(new GridLayout(3,3,2,2));
-		
-		ArrayList<Media> mediaInStore = store.getItemsInStore();
-		for (int i=0; i<mediaInStore.size();i++) {
-			MediaStore cell = new MediaStore(mediaInStore.get(i),cart);
-			center.add(cell);
-		}
-		
+		center.setLayout(new BoxLayout(center, BoxLayout.Y_AXIS));
 		return center;
 	}
 	
+	JPanel createSouth(){
+		JPanel south = new JPanel();
+		south.setLayout(new FlowLayout());
+		JButton add = new JButton("Add");
+		add.setPreferredSize(new Dimension(100,30));
+		add.setMaximumSize(new Dimension(100,30));
+		add.addActionListener(new ButtonListener(store));
+		south.add(add);
+		return south;
+	}
 	
-	public StoreScreen(Store store) {
+	public AddItemToStoreScreen(Store store,Cart cart) {
 		this.store = store;
-		this.cart = new Cart();
+		this.cart = cart;
 		Container cp = getContentPane();
 		cp.setLayout(new BorderLayout());
 		
 		cp.add(createNorth(),BorderLayout.NORTH);
+		cp.add(createSouth(),BorderLayout.SOUTH);
 		cp.add(createCenter(),BorderLayout.CENTER);
 		
 		setVisible(true);
-		setTitle("Store");
-		setSize(1024,768);
+		setTitle("Update Store");
+		setSize(600,400);
 	}
 	
-	
 	public static void main(String[] args) {
-		Store store1 = new Store();
-		DigitalVideoDisc dvd1= new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-//		cart.addMedia(dvd1);
-		
-		DigitalVideoDisc dvd2= new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-//		cart.addMedia(dvd2);
-		
-		DigitalVideoDisc dvd3= new DigitalVideoDisc("Aladin", "Animation","GiangHoang",90, 18.99f);
-//		cart.addMedia(dvd3);
-		
-		CompactDisc cd1 = new CompactDisc("99%", "Music", "MCK", "MCK", 65, 3.5f);
-		Book book1 = new Book("Harry Potter", "Magic", 29.99f);
-//		
-		store1.addMedia(dvd3);
-		store1.addMedia(dvd1);
-		store1.addMedia(dvd2);
-		store1.addMedia(book1);
-		store1.addMedia(cd1);
-		
-		StoreScreen sc = new StoreScreen(store1);
-		
+		Store store = new Store();
+		Cart cart = new Cart();
+		AddItemToStoreScreen sc = new AddItemToStoreScreen(store,cart);
 	}
 }

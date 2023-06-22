@@ -3,7 +3,7 @@
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="0"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-19"/>
 	<item key="org.eclipse.jdt.ui.last.external.project" value="C:\Users\AD\Desktop\Java\Lab02\AimsProject"/>
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\AD\Desktop\Java\jdk-20.0.1\lib"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Program Files\Java\javafx-sdk-20.0.1\lib"/>
 	<item key="filters_last_used" value="filter_imports;"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
@@ -115,7 +115,7 @@
 		</section>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item key="index" value="6"/>
+		<item key="index" value="3"/>
 	</section>
 	<section name="ProblemSeveritiesConfigurationBlock">
 		<item key="expanded0" value="true"/>
