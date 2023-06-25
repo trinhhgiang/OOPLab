@@ -1,5 +1,6 @@
 package hust.soict.dsai.aims.media;
 
+import java.io.EOFException;
 import java.util.Comparator;
 
 public abstract class Media {
@@ -25,18 +26,26 @@ public abstract class Media {
 		return cost;
 	}
 
-	public Media(String title, String category, float cost) {
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-		number_of_media+=1;
-		this.id = number_of_media;
+	public Media(String title, String category, float cost) throws IllegalArgumentException{
+		if (cost>0) {
+			this.title = title;
+			this.category = category;
+			this.cost = cost;
+			number_of_media+=1;
+			this.id = number_of_media;
+		}else {
+			throw new IllegalArgumentException("ERROR: Cost must be greater than 0");
+		}
 	}
 	public boolean equals(Object o) {
 		if (o instanceof Media) {
 			Media other = (Media) o;
-			if (this.title.equals(other.getTitle())){
-				return true;
+			try {
+				if (this.title.equals(other.getTitle())){
+					return true;
+				}	
+			}catch(NullPointerException e) {
+				e.printStackTrace();
 			}
 		}
 		return false;
